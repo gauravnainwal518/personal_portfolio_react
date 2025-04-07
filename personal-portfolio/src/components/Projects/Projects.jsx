@@ -10,7 +10,7 @@ const Projects = () => {
         "📋 Manages patient records digitally.\n📅 Allows easy online appointment booking.\n🔐 Ensures secure and smooth access for doctors and patients.",
       image: "/images/project1.png",
       github: "https://github.com/surajbisht-dev/Online_Healthcare_Checkup",
-      live: "https://liveproject1.com",
+      live: "https://online-healthcare-checkup-frontend.onrender.com",
     },
     {
       title: "Tourism Platform",
