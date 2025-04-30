@@ -26,7 +26,7 @@ const Projects = () => {
         "📝 A modern blogging platform where users can create, edit, and share posts.\n🚀 Powered by Appwrite for secure user authentication, database, and file storage.\n⚛️ Built with React for a responsive and intuitive writing experience.",
       image: "/images/project3.png",
       github: "https://github.com/gauravnainwal518/Blog-platform-using-react",
-      live: "https://liveproject3.com",
+      live: "https://blog-platform-using-react.vercel.app/",
     },
     {
       title: "Employee Management System (EMS)",
