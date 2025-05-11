@@ -67,7 +67,7 @@ const About = () => {
           variants={childVariants}
         >
           <a
-            href="https://docs.google.com/document/d/1QqKpgSLkzG9Su21bf1GMIMGjWN8YvLemUw4Sj3tVK14/edit?usp=drive_link"
+            href="https://drive.google.com/file/d/1Yk8Ukg6qCs5EwvRwb-608OL2mUPNo5R-/view?usp=drive_link"
             className="px-6 py-2 border-2 border-white text-white font-medium hover:bg-blue-500 hover:border-blue-500 transition-all duration-300 rounded-md"
           >
             View Resume
