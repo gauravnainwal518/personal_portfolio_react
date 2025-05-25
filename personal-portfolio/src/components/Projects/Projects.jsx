@@ -38,6 +38,19 @@ const Projects = () => {
     },
   ];
 
+  // Framer Motion variants
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.6,
+      },
+    }),
+  };
+
   return (
     <motion.section
       id="projects"
@@ -45,10 +58,7 @@ const Projects = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      variants={{
-        hidden: {},
-        visible: {},
-      }}
+      variants={{ hidden: {}, visible: {} }}
     >
       <div className="container mx-auto px-4 md:px-8">
         <motion.h2
@@ -59,32 +69,49 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           PROJECTS
-          <div className="h-1 w-20 bg-white mx-auto mt-2"></div>
+          <motion.div
+            className="h-1 w-20 bg-white mx-auto mt-2"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.5 }}
+            style={{ originX: 0 }}
+          />
         </motion.h2>
 
         {projects.map((project, index) => (
           <motion.div
             key={index}
             className="mb-16"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={index}
             viewport={{ once: true, amount: 0.3 }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+              {/* Animated Image */}
               <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                className="w-full"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <img
+                <motion.img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover rounded-lg shadow-md"
+                  whileHover={{ scale: 1.05, rotate: 1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 />
               </motion.div>
 
-              {/* Info Box with Hover Overlay Effect */}
-              <div className="group p-6 bg-gray-800 rounded-lg shadow-md min-h-[220px] flex flex-col justify-between hover:bg-gray-700 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-[1.02]">
+              {/* Info Box */}
+              <motion.div
+                className="group p-6 bg-gray-800 rounded-lg shadow-md min-h-[220px] flex flex-col justify-between hover:bg-gray-700 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-[1.02]"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 <div>
                   <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
                   <p className="text-gray-300 mb-5 whitespace-pre-line">
@@ -92,24 +119,28 @@ const Projects = () => {
                   </p>
                 </div>
                 <div className="flex space-x-6">
-                  <a
+                  <motion.a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center text-gray-300 hover:text-white"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     <FaGithub className="mr-2" /> GitHub
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center text-gray-300 hover:text-white"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     <FaExternalLinkAlt className="mr-2" /> Live Site
-                  </a>
+                  </motion.a>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         ))}
