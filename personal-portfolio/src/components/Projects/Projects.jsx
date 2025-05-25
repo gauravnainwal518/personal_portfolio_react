@@ -5,6 +5,14 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projects = [
     {
+      title: "Online Blog Writing Platform",
+      description:
+        "📝 A modern blogging platform where users can create, edit, and share posts.\n🚀 Powered by Appwrite for secure user authentication, database, and file storage.\n⚛️ Built with React for a responsive and intuitive writing experience.",
+      image: "/images/project3.png",
+      github: "https://github.com/gauravnainwal518/Blog-platform-using-react",
+      live: "https://blog-platform-using-react.vercel.app/",
+    },
+    {
       title: "E-Health Management System",
       description:
         "📋 Manages patient records digitally.\n📅 Allows easy online appointment booking.\n🔐 Ensures secure and smooth access for doctors and patients.",
@@ -19,14 +27,6 @@ const Projects = () => {
       image: "/images/project2.png",
       github: "https://github.com/gauravnainwal518/Tourism_platform",
       live: "https://tourism-platform.onrender.com/",
-    },
-    {
-      title: "Online Blog Writing Platform",
-      description:
-        "📝 A modern blogging platform where users can create, edit, and share posts.\n🚀 Powered by Appwrite for secure user authentication, database, and file storage.\n⚛️ Built with React for a responsive and intuitive writing experience.",
-      image: "/images/project3.png",
-      github: "https://github.com/gauravnainwal518/Blog-platform-using-react",
-      live: "https://blog-platform-using-react.vercel.app/",
     },
     {
       title: "Employee Management System (EMS)",
