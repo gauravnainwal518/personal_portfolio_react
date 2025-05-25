@@ -52,7 +52,11 @@ const Skills = () => {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.4 },
+      transition: {
+        type: "spring",
+        stiffness: 120,
+        damping: 10,
+      },
     },
   };
 
@@ -76,9 +80,15 @@ const Skills = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="relative group bg-gray-800 p-4 rounded-lg shadow-md flex items-center justify-center space-x-2 text-lg font-semibold text-gray-300 transform transition-transform duration-200 hover:-translate-y-1 overflow-hidden"
+              whileHover={{ scale: 1.08, rotate: 2 }}
+              className="relative group bg-gray-800 p-4 rounded-lg shadow-md flex items-center justify-center space-x-2 text-lg font-semibold text-gray-300 transform transition-transform duration-200 overflow-hidden hover:shadow-lg hover:shadow-cyan-500/30 hover:border hover:border-white"
             >
-              {skill.icon}
+              <motion.div
+                whileHover={{ rotate: -5 }}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
+                {skill.icon}
+              </motion.div>
               <span>{skill.name}</span>
 
               {/* Hover overlay */}
