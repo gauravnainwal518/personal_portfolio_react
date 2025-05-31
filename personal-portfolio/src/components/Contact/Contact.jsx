@@ -18,12 +18,12 @@ const containerVariants = {
 };
 
 const fadeInLeft = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -30 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
 };
 
 const fadeInRight = {
-  hidden: { opacity: 0, x: 50 },
+  hidden: { opacity: 0, x: 30 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
 };
 
@@ -68,11 +68,12 @@ const ContactSection = () => {
   return (
     <motion.section
       id="contact"
-      className="bg-gray-900 py-16"
+      className="bg-gray-900 py-16 overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
+      style={{ backfaceVisibility: "hidden" }} // helps reduce flicker in some browsers
     >
       <div className="container mx-auto px-4 md:px-8">
         <motion.h2
@@ -80,12 +81,13 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          style={{ backfaceVisibility: "hidden" }}
         >
           GET IN TOUCH
           <div className="h-1 w-20 bg-white mx-auto mt-2" />
         </motion.h2>
 
-        <div className="flex flex-col md:flex-row justify-center items-stretch gap-12 max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center items-stretch gap-12 max-w-6xl mx-auto overflow-hidden">
           {/* Left Info */}
           <motion.div
             variants={fadeInLeft}
@@ -93,6 +95,7 @@ const ContactSection = () => {
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 300 }}
             className="bg-gray-800 p-8 rounded-lg shadow-md flex-1 text-white space-y-6"
+            style={{ backfaceVisibility: "hidden" }}
           >
             <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
             <div className="flex items-center space-x-4">
@@ -122,6 +125,7 @@ const ContactSection = () => {
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 300 }}
             className="bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-xl flex-1"
+            style={{ backfaceVisibility: "hidden" }}
           >
             <h3 className="text-2xl font-semibold text-white mb-6">
               Send Me a Message
