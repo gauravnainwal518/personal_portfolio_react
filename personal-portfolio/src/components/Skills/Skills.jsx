@@ -35,7 +35,7 @@ const Skills = () => {
   ];
 
   const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 20 }, // reduced from 50 to 20
     visible: {
       opacity: 1,
       y: 0,
@@ -63,7 +63,7 @@ const Skills = () => {
   return (
     <motion.section
       id="skills"
-      className="bg-gray-900 py-16"
+      className="bg-gray-900 py-16 overflow-hidden" // added overflow-hidden
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
