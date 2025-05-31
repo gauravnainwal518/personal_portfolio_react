@@ -2,51 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* ✅ Hide vertical scrollbar but keep scrolling */
-body {
+html, body {
+  height: 100%;
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
 }
 
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
-}
-
-.nav-link {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 2px; /* Adjust padding as needed */
-  color: #e2e8f0; /* Light text color for dark mode */
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 0;
-  height: 2px; /* Line thickness */
-  background-color: #ffffff; /* Line color for dark mode */
-  transition: width 0.3s ease; /* Transition effect */
+  height: 0;
+  display: none; /* Chrome, Safari */
 }
 
-.nav-link:hover::after {
-  width: 100%;
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  overflow: -moz-scrollbars-none; /* Firefox legacy */
 }
 
-/* Text colors */
-.text-gray-700 {
-  color: #4a5568; /* Default gray color */
-}
-
-.text-gray-900 {
-  color: #1a202c; /* Darker gray color for hover */
-}
-
-.transition-colors {
-  transition: color 0.3s ease-in-out;
+html {
+  scroll-behavior: smooth;
 }
