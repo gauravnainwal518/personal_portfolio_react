@@ -2,9 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html {
   scroll-behavior: smooth;
+}
+
+/* ✅ Hide vertical scrollbar but keep scrolling */
+body {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 .nav-link {
@@ -29,8 +38,7 @@ html {
   width: 100%;
 }
 
-
-/* Add these styles to your global CSS file */
+/* Text colors */
 .text-gray-700 {
   color: #4a5568; /* Default gray color */
 }
