@@ -9,7 +9,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const navItems = ["Projects", "Skills", "Contact"];
+  const navItems = ["projects", "skills", "contact"];
 
   return (
     <nav className="bg-gradient-to-r from-gray-900 to-gray-700 text-white shadow-lg fixed top-0 left-0 w-full z-50">
