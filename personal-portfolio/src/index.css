@@ -1,20 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html, body {
-  background-color: #0f172a;
+  background-color: #0f172a; /* or  dark background */
   color: #ffffff;
   height: 100%;
-  overflow-y: auto; /* or scroll */
+  overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
 }
 
 body::-webkit-scrollbar {
   width: 0;
   height: 0;
-  display: none;
+  display: none; /* Chrome, Safari */
 }
 
 body {
   -ms-overflow-style: none;  /* IE and Edge */
-  /* overflow: -moz-scrollbars-none;  Remove this */
+  overflow: -moz-scrollbars-none; /* Firefox legacy */
 }
 
 html {
