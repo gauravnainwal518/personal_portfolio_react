@@ -3,22 +3,28 @@
 @tailwind utilities;
 
 html, body {
-  background-color: #0f172a;
+  background-color: #0f172a; /* dark background */
   color: #ffffff;
   height: 100%;
-  overflow-y: auto;  /* use auto to keep scroll functional */
-  scrollbar-width: none; /* Firefox */
+  overflow-y: auto; /* Use auto, not scroll */
+  scrollbar-width: thin; /* Firefox: make scrollbar thin */
+  scrollbar-color: transparent transparent; /* Firefox: make scrollbar transparent */
 }
 
 body::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* Hide scrollbar but keep space */
+  width: 6px;  /* Small width instead of 0 */
 }
 
-body {
-  -ms-overflow-style: none;  /* IE and Edge */
+body::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track */
 }
 
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2); /* subtle thumb */
+  border-radius: 3px;
+}
+
+/* Optional: smooth scroll */
 html {
   scroll-behavior: smooth;
 }
