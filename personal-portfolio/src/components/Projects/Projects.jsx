@@ -1,6 +1,5 @@
 import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 const Projects = () => {
   const projects = [
@@ -38,114 +37,66 @@ const Projects = () => {
     },
   ];
 
-  // Framer Motion variants
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.2,
-        duration: 0.6,
-      },
-    }),
-  };
-
   return (
-    <motion.section
-      id="projects"
-      className="bg-gray-900 py-16 text-white"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={{ hidden: {}, visible: {} }}
-    >
-      <div className="container mx-auto px-4 md:px-8">
-        <motion.h2
-          className="text-3xl font-bold text-center mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
+    <section id="projects" className="bg-gray-900 py-16 text-white">
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        {/* Section Heading */}
+        <h2 className="text-4xl font-bold text-center mb-12 tracking-wide">
           PROJECTS
-          <motion.div
-            className="h-1 w-20 bg-white mx-auto mt-2"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.5 }}
-            style={{ originX: 0 }}
-          />
-        </motion.h2>
+          <span className="block h-1 w-24 bg-blue-500 mx-auto mt-3 rounded"></span>
+        </h2>
 
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className="mb-16"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            custom={index}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-              {/* Animated Image */}
-              <motion.div
-                className="w-full"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <motion.img
+        {/* Grid of Projects */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {projects.map((project, idx) => (
+            <div
+              key={idx}
+              className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col"
+            >
+              {/* Image */}
+              <div className="w-full h-48 md:h-56 overflow-hidden rounded-t-lg">
+                <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover rounded-lg shadow-md"
-                  whileHover={{ scale: 1.05, rotate: 1 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
                 />
-              </motion.div>
+              </div>
 
-              {/* Info Box */}
-              <motion.div
-                className="group p-6 bg-gray-800 rounded-lg shadow-md min-h-[220px] flex flex-col justify-between hover:bg-gray-700 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-[1.02]"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                <div>
-                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                  <p className="text-gray-300 mb-5 whitespace-pre-line">
-                    {project.description}
-                  </p>
-                </div>
-                <div className="flex space-x-6">
-                  <motion.a
+              {/* Description */}
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
+                <p className="whitespace-pre-line text-gray-300 leading-relaxed flex-grow">
+                  {project.description}
+                </p>
+
+                {/* Icons at bottom */}
+                <div className="mt-6 flex space-x-8 text-blue-400">
+                  <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-300 hover:text-white"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    className="flex items-center hover:text-blue-600 transition font-medium"
                   >
-                    <FaGithub className="mr-2" /> GitHub
-                  </motion.a>
-                  <motion.a
+                    <FaGithub className="mr-2" size={20} />
+                    GitHub
+                  </a>
+                  <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-300 hover:text-white"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    className="flex items-center hover:text-blue-600 transition font-medium"
                   >
-                    <FaExternalLinkAlt className="mr-2" /> Live Site
-                  </motion.a>
+                    <FaExternalLinkAlt className="mr-2" size={20} />
+                    Live Site
+                  </a>
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
-        ))}
+          ))}
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

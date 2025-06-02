@@ -3,28 +3,88 @@
 @tailwind utilities;
 
 html, body {
-  background-color: #0f172a; /* dark background */
-  color: #ffffff;
+  margin: 0;
+  padding: 0;
   height: 100%;
-  overflow-y: auto; /* Use auto, not scroll */
-  scrollbar-width: thin; /* Firefox: make scrollbar thin */
-  scrollbar-color: transparent transparent; /* Firefox: make scrollbar transparent */
+  background-color: #000000; /* pure black */
+  color: #ffffff;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  scroll-behavior: smooth;
+  position: relative;
+  z-index: 0;
 }
 
-body::-webkit-scrollbar {
-  width: 6px;  /* Small width instead of 0 */
+/* Starry background overlay using body::before */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
 }
 
-body::-webkit-scrollbar-track {
-  background: transparent; /* Transparent track */
+/* Sections style */
+section {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.05); /* slight subtle background for testing scroll */
 }
 
-body::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2); /* subtle thumb */
+/* Navbar styles - optional enhancement */
+nav {
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 3px;
 }
 
-/* Optional: smooth scroll */
-html {
-  scroll-behavior: smooth;
+/* Link underline hover effect (used in Navbar) */
+nav a {
+  position: relative;
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  color: #fff;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 0;
+  background-color: #3b82f6; /* Tailwind blue-500 */
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after, nav a.active::after {
+  width: 100%;
 }

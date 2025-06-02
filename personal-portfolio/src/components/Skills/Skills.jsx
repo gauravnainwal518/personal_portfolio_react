@@ -9,97 +9,65 @@ import {
   SiMongodb,
   SiMysql,
   SiGithub,
+  SiExpress,
+  SiPostman,
+  SiTailwindcss,
 } from "react-icons/si";
-import { motion } from "framer-motion";
 
 const Skills = () => {
   const skills = [
-    { name: "HTML", icon: <SiHtml5 className="text-orange-500" size={24} /> },
-    { name: "CSS", icon: <SiCss3 className="text-blue-500" size={24} /> },
+    { name: "HTML", icon: <SiHtml5 className="text-orange-500" size={28} /> },
+    { name: "CSS", icon: <SiCss3 className="text-blue-500" size={28} /> },
     {
       name: "JavaScript",
-      icon: <SiJavascript className="text-yellow-400" size={24} />,
+      icon: <SiJavascript className="text-yellow-400" size={28} />,
     },
-    { name: "React", icon: <SiReact className="text-cyan-400" size={24} /> },
-    { name: "Redux", icon: <SiRedux className="text-purple-500" size={24} /> },
+    { name: "React", icon: <SiReact className="text-cyan-400" size={28} /> },
+    { name: "Redux", icon: <SiRedux className="text-purple-500" size={28} /> },
     {
       name: "Node.js",
-      icon: <SiNodedotjs className="text-green-500" size={24} />,
+      icon: <SiNodedotjs className="text-green-500" size={28} />,
+    },
+    {
+      name: "Express.js",
+      icon: <SiExpress className="text-white" size={28} />,
     },
     {
       name: "MongoDB",
-      icon: <SiMongodb className="text-green-600" size={24} />,
+      icon: <SiMongodb className="text-green-600" size={28} />,
     },
-    { name: "MySQL", icon: <SiMysql className="text-blue-600" size={24} /> },
-    { name: "GitHub", icon: <SiGithub className="text-white" size={24} /> },
+    { name: "MySQL", icon: <SiMysql className="text-blue-600" size={28} /> },
+    {
+      name: "Tailwind CSS",
+      icon: <SiTailwindcss className="text-sky-400" size={28} />,
+    },
+    { name: "GitHub", icon: <SiGithub className="text-white" size={28} /> },
+    {
+      name: "Postman",
+      icon: <SiPostman className="text-orange-400" size={28} />,
+    },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 }, // reduced from 50 to 20
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        when: "beforeChildren",
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 120,
-        damping: 10,
-      },
-    },
-  };
-
   return (
-    <motion.section
-      id="skills"
-      className="bg-gray-900 py-16 overflow-hidden" // added overflow-hidden
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={containerVariants}
-    >
+    <section id="skills" className="bg-gray-900 py-16 text-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-16">
-        <h2 className="text-3xl font-bold text-center mb-12 text-white">
-          SKILLS
-          <div className="h-1 w-20 bg-white mx-auto mt-2"></div>
-        </h2>
+        {/* Heading */}
+        <h2 className="text-4xl font-bold text-center mb-12">SKILLS</h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+        {/* Skills Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {skills.map((skill, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={cardVariants}
-              whileHover={{ scale: 1.08, rotate: 2 }}
-              className="relative group bg-gray-800 p-4 rounded-lg shadow-md flex items-center justify-center space-x-2 text-lg font-semibold text-gray-300 transform transition-transform duration-200 overflow-hidden hover:shadow-lg hover:shadow-cyan-500/30 hover:border hover:border-white"
+              className="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-cyan-500/30 hover:scale-105 transition-transform duration-300 flex flex-col items-center justify-center space-y-3 text-center"
             >
-              <motion.div
-                whileHover={{ rotate: -5 }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
-                {skill.icon}
-              </motion.div>
-              <span>{skill.name}</span>
-
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center text-white text-sm font-medium">
-                {skill.name}
-              </div>
-            </motion.div>
+              {skill.icon}
+              <span className="text-gray-300 font-medium">{skill.name}</span>
+            </div>
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
