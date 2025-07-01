@@ -28,3 +28,16 @@ section {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 3px;
 }
+
+/* waving hand in home.jsx */
+@keyframes waving-hand {
+  0%, 100% { transform: rotate(0deg); }
+  20%, 60% { transform: rotate(15deg); }
+  40%, 80% { transform: rotate(-10deg); }
+}
+.animate-waving-hand {
+  animation: waving-hand 1.5s infinite;
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+

@@ -38,12 +38,11 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="bg-gray-900 py-16 pt-32 text-white">
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+    <section id="projects" className="bg-gray-800 py-20 px-6 text-white">
+      <div className="container mx-auto max-w-7xl">
         {/* Section Heading */}
-        <h2 className="text-4xl font-bold text-center mb-12 tracking-wide">
+        <h2 className="text-5xl font-bold text-center text-blue-400 underline underline-offset-8 decoration-blue-500 mb-12 tracking-wide">
           PROJECTS
-          <span className="block h-1 w-24 bg-blue-500 mx-auto mt-3 rounded"></span>
         </h2>
 
         {/* Grid of Projects */}
@@ -51,7 +50,7 @@ const Projects = () => {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col"
+              className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 flex flex-col"
             >
               {/* Image */}
               <div className="w-full h-48 md:h-56 overflow-hidden rounded-t-lg">

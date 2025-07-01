@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-10">
+        <div className="hidden md:flex space-x-10 items-center">
           {navItems.map((item) => (
             <Link
               key={item}
@@ -35,6 +35,17 @@ const Navbar = () => {
               <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
+
+          {/* Resume Link */}
+          <a
+            href="/Gaurav resume.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300"
+          >
+            Download CV
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -68,6 +79,18 @@ const Navbar = () => {
               {item.charAt(0).toUpperCase() + item.slice(1)}
             </Link>
           ))}
+
+          {/* Resume Button in Mobile */}
+          <a
+            href="/Gaurav resume.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleClose}
+            className="mt-3 bg-blue-500 hover:bg-blue-600 text-white text-center py-2 rounded-md text-sm font-medium transition duration-300"
+          >
+            Download CV
+          </a>
         </div>
       </div>
     </nav>

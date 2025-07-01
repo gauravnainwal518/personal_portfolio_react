@@ -1,87 +1,72 @@
 import React from "react";
-import {
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaGithub,
-  FaLinkedin,
-} from "react-icons/fa";
+import { TypeAnimation } from "react-type-animation";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Home = () => {
   return (
-    <section className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-6 pt-32 pb-12">
-      {/* Profile Photo */}
-      <img
-        src="/images/default.jpeg"
-        alt="Gaurav Profile"
-        className="w-36 h-36 rounded-full border-4 border-blue-500 shadow-lg mb-8"
-      />
+    <section className="min-h-screen bg-gray-800 text-white flex items-center justify-center px-6 pt-32 pb-12">
+      <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
+        {/* LEFT SIDE */}
+        <div className="flex-1 text-center md:text-left space-y-6">
+          <h2 className="text-3xl md:text-4xl font-semibold text-blue-300">
+            Hi there{" "}
+            <span className="inline-block animate-waving-hand">👋</span>!
+          </h2>
 
-      {/* Name & Intro */}
-      <h1 className="text-4xl md:text-5xl font-bold mb-2 text-center leading-tight">
-        Hey! 👋 I'am <span className="block text-blue-400">Gaurav Nainwal</span>
-      </h1>
-      <p className="text-lg md:text-xl mb-10 text-center text-gray-400 max-w-md">
-        I'm a Full-Stack Developer passionate about building scalable and
-        efficient web applications.
-      </p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mt-4">
+            I'm Gaurav Chandra Nainwal
+          </h1>
 
-      {/* Contact Info */}
-      <div className="space-y-5 text-gray-300 max-w-sm w-full">
-        <div className="flex items-center gap-4 justify-center">
-          <FaPhoneAlt className="text-blue-400" />
-          <a
-            href="tel:+919084481518"
-            className="hover:text-white transition text-base md:text-lg"
-          >
-            +91 9084481518
-          </a>
+          <TypeAnimation
+            sequence={[
+              "Full Stack Developer",
+              2000,
+              "MERN Stack Developer",
+              2000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+            className="text-xl md:text-2xl text-gray-300 block pt-2"
+          />
+
+          <p className="text-base md:text-lg text-gray-400 max-w-md mx-auto md:mx-0">
+            Passionate about crafting modern web apps and solving real-world
+            problems using JavaScript and the MERN stack.
+          </p>
+
+          {/* Social Icons */}
+          <div className="pt-4 flex justify-center md:justify-start gap-6 text-2xl">
+            <a
+              href="https://github.com/gauravnainwal518"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/gauravcn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
         </div>
-        <div className="flex items-center gap-4 justify-center">
-          <FaEnvelope className="text-blue-400" />
-          <a
-            href="mailto: gauravnainwal394@gmail.com"
-            className="hover:text-white transition text-base md:text-lg"
-          >
-            gauravnainwal394@gmail.com
-          </a>
+
+        {/* RIGHT SIDE - Enlarged Image with Overlay */}
+        <div className="flex-1 flex justify-center">
+          <div className="relative bg-gray-800 p-1 rounded-2xl shadow-lg border border-gray-700 max-w-md md:max-w-lg w-full">
+            <img
+              src="/images/animation.jpg"
+              alt="Gaurav"
+              className="w-full h-auto object-cover rounded-xl"
+            />
+            <div className="absolute inset-0 bg-gray-900 opacity-40 rounded-xl pointer-events-none"></div>
+          </div>
         </div>
-        <div className="flex items-center gap-4 justify-center">
-          <FaMapMarkerAlt className="text-blue-400" />
-          <span className="text-base md:text-lg">Uttarakhand, India</span>
-        </div>
-      </div>
-
-      {/* Resume & Social Buttons */}
-      <div className="mt-12 flex flex-col sm:flex-row items-center gap-8">
-        <a
-          href="https://drive.google.com/file/d/1Yk8Ukg6qCs5EwvRwb-608OL2mUPNo5R-/view?usp=drive_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-8 py-3 border-2 border-blue-500 text-blue-400 font-semibold rounded-md hover:bg-blue-500 hover:text-black transition text-lg"
-        >
-          View Resume
-        </a>
-
-        <a
-          href="https://github.com/gauravnainwal518"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-400 hover:text-white transition text-4xl"
-          aria-label="GitHub"
-        >
-          <FaGithub />
-        </a>
-
-        <a
-          href="https://linkedin.com/in/gaurav-chandra-nainwal-72391b285"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-400 hover:text-white transition text-4xl"
-          aria-label="LinkedIn"
-        >
-          <FaLinkedin />
-        </a>
       </div>
     </section>
   );

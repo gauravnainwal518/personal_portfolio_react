@@ -30,15 +30,15 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="bg-gray-900 py-16 pt-32 px-4">
+    <section id="contact" className="bg-gray-800 py-16 pt-0 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">
+        <h2 className="text-5xl font-bold text-center text-blue-400 underline underline-offset-8 decoration-blue-400 mb-12">
           GET IN TOUCH
         </h2>
 
         <div className="flex flex-col md:flex-row gap-8">
           {/* Contact Info */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-md flex-1 text-white space-y-6">
+          <div className="bg-gray-700 p-6 rounded-lg shadow-md flex-1 text-white space-y-6">
             <h3 className="text-2xl font-semibold mb-4">Let's Connect</h3>
             <div className="flex items-center space-x-4">
               <FaEnvelope className="text-blue-400" size={20} />
@@ -57,7 +57,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-md flex-1">
+          <div className="bg-gray-700 p-6 rounded-lg shadow-md flex-1">
             <h3 className="text-2xl font-semibold text-white mb-4">
               Send Me a Message
             </h3>
