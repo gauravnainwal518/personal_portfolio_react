@@ -30,7 +30,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="bg-gray-900 py-16 px-4">
+    <section id="contact" className="bg-gray-900 py-16 pt-32 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-white mb-12">
           GET IN TOUCH

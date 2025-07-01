@@ -9,7 +9,7 @@ import {
 
 const Home = () => {
   return (
-    <section className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-6 pt-20 pb-12">
+    <section className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-6 pt-32 pb-12">
       {/* Profile Photo */}
       <img
         src="/images/default.jpeg"

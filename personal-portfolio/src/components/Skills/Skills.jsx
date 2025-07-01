@@ -49,7 +49,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-gray-900 py-16 text-white">
+    <section id="skills" className="bg-gray-900 py-16 pt-32 text-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-16">
         {/* Heading */}
         <h2 className="text-4xl font-bold text-center mb-12">SKILLS</h2>

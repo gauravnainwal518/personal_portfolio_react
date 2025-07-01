@@ -1,35 +1,41 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar.jsx";
-import Home from "./components/Home/Home.jsx"; // <-- import Home
+import Home from "./components/Home/Home.jsx";
 import About from "./components/About/About.jsx";
 import Projects from "./components/Projects/Projects.jsx";
 import Skills from "./components/Skills/Skills.jsx";
 import Contact from "./components/Contact/Contact.jsx";
+import { Element } from "react-scroll"; // ✅ Import Element
 
 function App() {
   return (
     <div className="App text-white transition-colors duration-300 relative z-10">
       <Navbar />
 
-      <section id="home" className="min-h-screen">
+      {/* Home Section - Can stay with plain section since it's at top */}
+      <Element name="home" className="min-h-screen">
         <Home />
-      </section>
+      </Element>
 
-      <section id="about" className="min-h-screen">
+      {/* About Section */}
+      <Element name="about" className="min-h-screen ">
         <About />
-      </section>
+      </Element>
 
-      <section id="projects" className="min-h-screen">
+      {/* Projects Section */}
+      <Element name="projects" className="min-h-screen ">
         <Projects />
-      </section>
+      </Element>
 
-      <section id="skills" className="min-h-screen">
+      {/* Skills Section */}
+      <Element name="skills" className="min-h-screen ">
         <Skills />
-      </section>
+      </Element>
 
-      <section id="contact" className="min-h-screen">
+      {/* Contact Section */}
+      <Element name="contact" className="min-h-screen ">
         <Contact />
-      </section>
+      </Element>
     </div>
   );
 }
