@@ -56,16 +56,17 @@ const Home = () => {
           </div>
         </div>
 
-        {/* RIGHT SIDE - Enlarged Image with Overlay */}
-        <div className="flex-1 flex justify-center">
-          <div className="relative bg-gray-800 p-1 rounded-2xl shadow-lg border border-gray-700 max-w-md md:max-w-lg w-full">
-            <img
-              src="/images/animation.jpg"
-              alt="Gaurav"
-              className="w-full h-auto object-cover rounded-xl"
-            />
-            <div className="absolute inset-0 bg-gray-900 opacity-40 rounded-xl pointer-events-none"></div>
-          </div>
+        {/* RIGHT SIDE -  Video */}
+        <div className="relative rounded-2xl overflow-hidden max-w-md md:max-w-lg w-full">
+          <video
+            src="/videos/introvideo.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-auto object-cover brightness-[0.7] contrast-[1.1]"
+          />
+          <div className="absolute inset-0 bg-gray-800 opacity-30 pointer-events-none"></div>
         </div>
       </div>
     </section>

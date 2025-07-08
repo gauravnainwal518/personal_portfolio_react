@@ -35,16 +35,19 @@ const About = () => {
             </p>
           </div>
 
-          {/* Right - Image with Overlay */}
+          {/* Right - Video with dark blending */}
           <div className="flex-1 flex justify-center">
-            <div className="relative bg-gray-800 p-1 rounded-2xl shadow-lg border border-gray-700 max-w-sm md:max-w-lg w-full">
-              <img
-                src="/images/about.jpg" // Replace with your actual image path
-                alt="About visual"
-                className="w-full h-auto object-cover rounded-xl"
+            <div className="relative max-w-sm md:max-w-lg w-full rounded-2xl overflow-hidden bg-[#1f2937] border border-[#1f2937] shadow-inner">
+              <video
+                src="/videos/aboutvideo.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto object-cover brightness-[0.9] contrast-[1.05]"
               />
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gray-900 opacity-40 rounded-xl pointer-events-none"></div>
+              {/* Optional overlay to soften transition */}
+              <div className="absolute inset-0 bg-[#1f2937] opacity-20 pointer-events-none" />
             </div>
           </div>
         </div>
