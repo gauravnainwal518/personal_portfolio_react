@@ -37,7 +37,7 @@ const Navbar = () => {
 
           {/* Resume Link */}
           <a
-            href="/Gaurav resume.pdf"
+            href="/Resume_Gaurav Chandra nainwal.pdf"
             download
             target="_blank"
             rel="noopener noreferrer"
