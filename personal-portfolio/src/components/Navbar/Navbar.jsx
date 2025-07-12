@@ -77,7 +77,7 @@ const Navbar = () => {
 
           {/* Resume Button in Mobile */}
           <a
-            href="/Gaurav resume.pdf"
+            href="/Resume_Gaurav Chandra nainwal.pdf"
             download
             target="_blank"
             rel="noopener noreferrer"
