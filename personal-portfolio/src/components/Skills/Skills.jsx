@@ -3,6 +3,7 @@ import {
   SiHtml5,
   SiCss3,
   SiJavascript,
+  SiTypescript,
   SiReact,
   SiRedux,
   SiNodedotjs,
@@ -21,6 +22,10 @@ const Skills = () => {
     {
       name: "JavaScript",
       icon: <SiJavascript className="text-yellow-400" size={28} />,
+    },
+    {
+      name: "TypeScript",
+      icon: <SiTypescript className="text-blue-400" size={28} />,
     },
     { name: "React", icon: <SiReact className="text-cyan-400" size={28} /> },
     { name: "Redux", icon: <SiRedux className="text-purple-500" size={28} /> },
@@ -49,10 +54,10 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-gray-800 py-16 pt-0 text-white">
+    <section id="skills" className="bg-gray-900 py-16 pt-0 text-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-16">
         {/* Heading */}
-        <h2 className="text-5xl font-bold text-center text-blue-400 underline underline-offset-8 decoration-blue-500 mb-12">
+        <h2 className="text-5xl font-bold text-center text-blue-400  decoration-blue-500 mb-12">
           SKILLS
         </h2>
 

@@ -30,16 +30,18 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="bg-gray-800 py-16 pt-0 px-4">
+    <section id="contact" className="bg-gray-900 py-20 px-6 text-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-bold text-center text-blue-400 underline underline-offset-8 decoration-blue-400 mb-12">
+        <h2 className="text-5xl font-bold text-center text-blue-400 decoration-blue-500 mb-12">
           GET IN TOUCH
         </h2>
 
         <div className="flex flex-col md:flex-row gap-8">
           {/* Contact Info */}
-          <div className="bg-gray-700 p-6 rounded-lg shadow-md flex-1 text-white space-y-6">
-            <h3 className="text-2xl font-semibold mb-4">Let's Connect</h3>
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex-1 space-y-6">
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Let's Connect
+            </h3>
             <div className="flex items-center space-x-4">
               <FaEnvelope className="text-blue-400" size={20} />
               <span className="text-lg break-words">
@@ -57,14 +59,14 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-700 p-6 rounded-lg shadow-md flex-1">
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex-1">
             <h3 className="text-2xl font-semibold text-white mb-4">
               Send Me a Message
             </h3>
             <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
               <div>
                 <label
-                  className="block text-lg font-medium mb-1 text-white"
+                  className="block text-lg font-medium mb-1"
                   htmlFor="name"
                 >
                   Name
@@ -74,13 +76,13 @@ const ContactSection = () => {
                   name="from_name"
                   required
                   placeholder="Your Name"
-                  className="w-full p-2 rounded-md bg-gray-700 text-gray-200 border border-gray-600 focus:border-blue-500 focus:outline-none"
+                  className="w-full p-2 rounded-md bg-gray-900 text-gray-200 border border-gray-700 focus:border-blue-500 focus:outline-none"
                 />
               </div>
 
               <div>
                 <label
-                  className="block text-lg font-medium mb-1 text-white"
+                  className="block text-lg font-medium mb-1"
                   htmlFor="email"
                 >
                   Email
@@ -90,13 +92,13 @@ const ContactSection = () => {
                   name="from_email"
                   required
                   placeholder="Your Email"
-                  className="w-full p-2 rounded-md bg-gray-700 text-gray-200 border border-gray-600 focus:border-blue-500 focus:outline-none"
+                  className="w-full p-2 rounded-md bg-gray-900 text-gray-200 border border-gray-700 focus:border-blue-500 focus:outline-none"
                 />
               </div>
 
               <div>
                 <label
-                  className="block text-lg font-medium mb-1 text-white"
+                  className="block text-lg font-medium mb-1"
                   htmlFor="message"
                 >
                   Message
@@ -106,7 +108,7 @@ const ContactSection = () => {
                   required
                   rows="5"
                   placeholder="Your Message"
-                  className="w-full p-2 rounded-md bg-gray-700 text-gray-200 border border-gray-600 focus:border-blue-500 focus:outline-none"
+                  className="w-full p-2 rounded-md bg-gray-900 text-gray-200 border border-gray-700 focus:border-blue-500 focus:outline-none"
                 />
               </div>
 

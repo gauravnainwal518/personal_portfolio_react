@@ -1,19 +1,19 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
+import { FaRegHandPeace } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Home = () => {
   return (
-    <section className="min-h-screen bg-gray-800 text-white flex items-center justify-center px-6 pt-32 pb-12">
-      <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
+    <section className="min-h-screen bg-gray-900 text-white flex items-center justify-center px-6 pt-32 pb-12">
+      <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-12">
         {/* LEFT SIDE */}
         <div className="flex-1 text-center md:text-left space-y-6">
-          <h2 className="text-3xl md:text-4xl font-semibold text-blue-300">
-            Hi there{" "}
-            <span className="inline-block animate-waving-hand">👋</span>!
+          <h2 className="text-3xl md:text-4xl font-semibold text-blue-400 flex items-center justify-center md:justify-start gap-2">
+            Hi there <FaRegHandPeace className="inline-block animate-bounce" />!
           </h2>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-white mt-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white">
             I'm Gaurav Chandra Nainwal
           </h1>
 
@@ -35,38 +35,34 @@ const Home = () => {
             problems using JavaScript and the MERN stack.
           </p>
 
-          {/* Social Icons */}
-          <div className="pt-4 flex justify-center md:justify-start gap-6 text-2xl">
+          {/* Social Icons - KEEPING on LEFT */}
+          <div className="flex justify-center md:justify-start gap-6 pt-4 text-xl">
             <a
               href="https://github.com/gauravnainwal518"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-400 transition"
+              className="hover:text-blue-400 transition-colors"
             >
               <FaGithub />
             </a>
             <a
-              href="https://www.linkedin.com/in/gauravcn/"
+              href="https://linkedin.com/in/gauravcn"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-400 transition"
+              className="hover:text-blue-400 transition-colors"
             >
               <FaLinkedin />
             </a>
           </div>
         </div>
 
-        {/* RIGHT SIDE -  Video */}
-        <div className="relative rounded-2xl overflow-hidden max-w-md md:max-w-lg w-full">
-          <video
-            src="/videos/introvideo.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-auto object-cover brightness-[0.7] contrast-[1.1]"
+        {/* RIGHT SIDE - IMAGE ONLY (no icons) */}
+        <div className="flex-1 flex justify-center">
+          <img
+            src="/images/programmer illustration.png"
+            alt="Developer Illustration"
+            className="w-[300px] md:w-[400px] animate-float"
           />
-          <div className="absolute inset-0 bg-gray-800 opacity-30 pointer-events-none"></div>
         </div>
       </div>
     </section>
