@@ -10,7 +10,7 @@ const Projects = () => {
         "Secure auth, DB, and storage via Appwrite",
         "Built with React for fast UI",
       ],
-      image: "/images/blog.png",
+      image: "/images/blogphoto.png",
       github: "https://github.com/gauravnainwal518/Blog-platform-using-react",
       live: "https://blog-platform-using-react.vercel.app/",
     },
@@ -45,7 +45,28 @@ const Projects = () => {
       ],
       image: "/images/project4.png",
       github: "https://github.com/gauravnainwal518/project4",
-      live: "https://liveproject4.com",
+    },
+    {
+      title: "Personal Portfolio Website",
+      highlights: [
+        "Built with React + Vite + Tailwind CSS",
+        "Fully responsive with dark mode",
+        "Showcases projects, skills, and contact form",
+      ],
+      image: "/images/personalportfolio.png",
+      github: "https://github.com/gauravnainwal518/Portfolio",
+      live: "https://gaurav-devfolio.vercel.app/",
+    },
+    {
+      title: "Note App",
+      highlights: [
+        "Create and manage personal notes",
+        "Supports editing and deleting notes",
+        "Built using React for quick interactions",
+      ],
+      image: "/images/noteapp.png",
+      github: "https://github.com/gauravnainwal518/Note-app",
+      live: "https://note-app-five-silk.vercel.app/",
     },
   ];
 
@@ -103,15 +124,17 @@ const Projects = () => {
                     <FaGithub className="mr-2" size={18} />
                     GitHub
                   </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center hover:text-blue-600 transition"
-                  >
-                    <FaExternalLinkAlt className="mr-2" size={18} />
-                    Live Site
-                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center hover:text-blue-600 transition"
+                    >
+                      <FaExternalLinkAlt className="mr-2" size={18} />
+                      Live Site
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
