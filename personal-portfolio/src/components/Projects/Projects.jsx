@@ -4,15 +4,15 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 const Projects = () => {
   const projects = [
     {
-      title: "Online Blog Writing Platform",
+      title: "Tourism Platform",
       highlights: [
-        "Create, edit & share blog posts",
-        "Secure auth, DB, and storage via Appwrite",
-        "Built with React for fast UI",
+        "Connects travelers with guides",
+        "Book homestays, tours & cultural events",
+        "MERN stack for scalability & performance",
       ],
-      image: "/images/blogphoto.png",
-      github: "https://github.com/gauravnainwal518/Blog-platform-using-react",
-      live: "https://blog-platform-using-react.vercel.app/",
+      image: "/images/project2.png",
+      github: "https://github.com/gauravnainwal518/Tourism_platform",
+      live: "https://tourism-platform.onrender.com/api/",
     },
     {
       title: "E-Health Management System",
@@ -26,15 +26,15 @@ const Projects = () => {
       live: "https://online-healthcare-checkup-1.onrender.com/",
     },
     {
-      title: "Tourism Platform",
+      title: "Online Blog Writing Platform",
       highlights: [
-        "Connects travelers with guides",
-        "Book homestays, tours & cultural events",
-        "MERN stack for scalability & performance",
+        "Create, edit & share blog posts",
+        "Secure auth, DB, and storage via Appwrite",
+        "Built with React for fast UI",
       ],
-      image: "/images/project2.png",
-      github: "https://github.com/gauravnainwal518/Tourism_platform",
-      live: "https://tourism-platform.onrender.com/",
+      image: "/images/blogphoto.png",
+      github: "https://github.com/gauravnainwal518/Blog-platform-using-react",
+      live: "https://blog-platform-using-react.vercel.app/",
     },
     {
       title: "Employee Management System (EMS)",
