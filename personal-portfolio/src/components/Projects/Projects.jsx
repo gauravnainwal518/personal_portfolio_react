@@ -12,7 +12,7 @@ const Projects = () => {
       ],
       image: "/images/project2.png",
       github: "https://github.com/gauravnainwal518/Tourism_platform",
-      live: "https://tourism-platform.onrender.com/api/",
+      live: "https://tourism-platform.onrender.com/api",
     },
     {
       title: "E-Health Management System",
