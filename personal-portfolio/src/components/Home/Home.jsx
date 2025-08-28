@@ -18,12 +18,7 @@ const Home = () => {
           </h1>
 
           <TypeAnimation
-            sequence={[
-              "Full Stack Developer",
-              2000,
-              "MERN Stack Developer",
-              2000,
-            ]}
+            sequence={["Full Stack Development", 2000, "MERN Stack ", 2000]}
             wrapper="span"
             speed={50}
             repeat={Infinity}
