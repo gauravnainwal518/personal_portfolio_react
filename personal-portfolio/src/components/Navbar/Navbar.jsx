@@ -69,6 +69,7 @@ const Navbar = () => {
               smooth={true}
               duration={500}
               offset={-80}
+              onClick={handleClose} // <-- Add this line
               className="py-3 text-lg text-gray-300 hover:text-white border-b border-gray-700 cursor-pointer"
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}

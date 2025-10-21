@@ -5,35 +5,36 @@ import About from "./components/About/About.jsx";
 import Projects from "./components/Projects/Projects.jsx";
 import Skills from "./components/Skills/Skills.jsx";
 import Contact from "./components/Contact/Contact.jsx";
-import { Element } from "react-scroll"; // ✅ Import Element
+
+import { Element } from "react-scroll";
 
 function App() {
   return (
     <div className="App text-white transition-colors duration-300 relative z-10">
       <Navbar />
 
-      {/* Home Section - Can stay with plain section since it's at top */}
+      {/* Home Section */}
       <Element name="home" className="min-h-screen">
         <Home />
       </Element>
 
       {/* About Section */}
-      <Element name="about" className="min-h-screen ">
+      <Element name="about" className="min-h-screen">
         <About />
       </Element>
 
       {/* Projects Section */}
-      <Element name="projects" className="min-h-screen ">
+      <Element name="projects" className="min-h-screen">
         <Projects />
       </Element>
 
       {/* Skills Section */}
-      <Element name="skills" className="min-h-screen ">
+      <Element name="skills" className="min-h-screen">
         <Skills />
       </Element>
 
       {/* Contact Section */}
-      <Element name="contact" className="min-h-screen ">
+      <Element name="contact" className="min-h-screen">
         <Contact />
       </Element>
     </div>
