@@ -19,9 +19,11 @@ const Home = () => {
 
           <TypeAnimation
             sequence={[
-              "Aspiring MERN Stack Developer",
+              "MERN Stack Developer",
               2000,
-              "Learning and Building Full Stack Projects",
+              "Cypress Automation Tester",
+              2000,
+              "Full Stack Developer with Testing Skills",
               2000,
             ]}
             wrapper="span"
@@ -31,8 +33,9 @@ const Home = () => {
           />
 
           <p className="text-base md:text-lg text-gray-400 max-w-md mx-auto md:mx-0">
-            Passionate about crafting modern web apps and solving real-world
-            problems using JavaScript and the MERN stack.
+            Passionate about building full-stack web applications using the MERN
+            stack and ensuring product quality with end-to-end automation
+            testing using Cypress.
           </p>
 
           {/* Social Icons - KEEPING on LEFT */}

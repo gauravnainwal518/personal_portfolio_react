@@ -13,6 +13,10 @@ import {
   SiExpress,
   SiPostman,
   SiTailwindcss,
+  SiCypress,
+  SiCucumber,
+  SiJenkins,
+  SiMocha,
 } from "react-icons/si";
 
 const Skills = () => {
@@ -51,13 +55,31 @@ const Skills = () => {
       name: "Postman",
       icon: <SiPostman className="text-orange-400" size={28} />,
     },
+
+    // Testing Skills
+    {
+      name: "Cypress",
+      icon: <SiCypress className="text-green-400" size={28} />,
+    },
+    {
+      name: "Cucumber",
+      icon: <SiCucumber className="text-green-600" size={28} />,
+    },
+    {
+      name: "Mocha",
+      icon: <SiMocha className="text-yellow-600" size={28} />,
+    },
+    {
+      name: "Jenkins",
+      icon: <SiJenkins className="text-red-500" size={28} />,
+    },
   ];
 
   return (
     <section id="skills" className="bg-gray-900 py-16 pt-0 text-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-16">
         {/* Heading */}
-        <h2 className="text-5xl font-bold text-center text-blue-400  decoration-blue-500 mb-12">
+        <h2 className="text-5xl font-bold text-center text-blue-400 mb-12">
           SKILLS
         </h2>
 

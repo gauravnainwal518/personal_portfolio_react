@@ -16,7 +16,7 @@ const About = () => {
     <section id="about" className="bg-[#0f172a] text-white py-20 px-6">
       <div className="max-w-5xl mx-auto space-y-16 border border-gray-700 rounded-2xl p-8 shadow-lg backdrop-blur-md bg-opacity-30 bg-gray-900/30">
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-400 decoration-blue-500">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-blue-400">
           ABOUT ME
         </h2>
 
@@ -27,18 +27,19 @@ const About = () => {
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Gaurav Chandra Nainwal
             </span>
-            , a MERN Stack Developer passionate about building responsive and
-            scalable web applications.
+            , a MERN Stack Developer and Cypress Automation Tester passionate
+            about building scalable web applications and ensuring software
+            quality.
           </p>
 
           <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
             I specialize in{" "}
             <span className="text-blue-400 font-medium">
               React, Node.js, Express, and MongoDB
-            </span>
-            , integrating different tools and technologies to create full-stack
-            solutions. I enjoy learning new frameworks and building projects
-            from scratch to deployment.
+            </span>{" "}
+            to build full-stack applications, and I use Cypress for end-to-end
+            and API automation testing. I enjoy creating complete solutions—from
+            development to testing—to ensure reliable and high-quality software.
           </p>
         </div>
 
@@ -63,10 +64,10 @@ const About = () => {
           </ul>
         </div>
 
-        {/* Tech Stack Section */}
+        {/* Development Stack Section */}
         <div className="space-y-4">
           <h3 className="flex items-center gap-3 text-2xl font-semibold text-blue-300">
-            <FaLaptopCode className="text-blue-400" /> Tech Stack
+            <FaLaptopCode className="text-blue-400" /> Development Stack
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-xl shadow-md hover:scale-105 transition-transform">
@@ -96,16 +97,37 @@ const About = () => {
           </div>
         </div>
 
+        {/* Testing Stack Section */}
+        <div className="space-y-4">
+          <h3 className="flex items-center gap-3 text-2xl font-semibold text-blue-300">
+            <FaTools className="text-blue-400" /> Testing Stack
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-xl shadow-md">
+              Cypress
+            </div>
+            <div className="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-xl shadow-md">
+              API Testing
+            </div>
+            <div className="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-xl shadow-md">
+              Postman
+            </div>
+            <div className="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-xl shadow-md">
+              Test Case Writing
+            </div>
+          </div>
+        </div>
+
         {/* Interests Section */}
         <div className="space-y-4">
           <h3 className="flex items-center gap-3 text-2xl font-semibold text-blue-300">
             <FaTools className="text-blue-400" /> Interests & Learning
           </h3>
           <p className="text-gray-400">
-            Beyond coding, I enjoy exploring new web technologies, enhancing
-            UI/UX, and building small projects to strengthen my skills. I am
-            always eager to learn and experiment with modern tools and
-            frameworks.
+            Beyond development, I enjoy learning automation testing, improving
+            test coverage, and building real-world projects. I am always eager
+            to explore new tools, frameworks, and best practices in both
+            development and quality assurance.
           </p>
         </div>
       </div>
