@@ -14,16 +14,18 @@ const Home = () => {
           </h2>
 
           <h1 className="text-4xl md:text-5xl font-bold text-white">
-            I'm Gaurav Chandra Nainwal
+            I'm Gaurav Nainwal
           </h1>
 
           <TypeAnimation
             sequence={[
               "MERN Stack Developer",
               2000,
+              "React Developer",
+              2000,
               "Cypress Automation Tester",
               2000,
-              "Full Stack Developer with Testing Skills",
+              "Full Stack Developer",
               2000,
             ]}
             wrapper="span"
