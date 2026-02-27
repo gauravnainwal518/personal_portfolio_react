@@ -5,11 +5,17 @@ import About from "./components/About/About.jsx";
 import Projects from "./components/Projects/Projects.jsx";
 import Skills from "./components/Skills/Skills.jsx";
 import Contact from "./components/Contact/Contact.jsx";
+import GlobalBackground from "./components/Global/GlobalBackground.jsx";
+import CustomCursor from "./components/Customcursor/CustomCursor.jsx";
 
 import { Element } from "react-scroll";
+
 function App() {
   return (
-    <div className="App text-white transition-colors duration-300 relative z-10">
+    <div className="App relative text-white overflow-x-hidden">
+      <GlobalBackground />
+      <CustomCursor />
+
       <Navbar />
 
       <Element name="home">

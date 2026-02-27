@@ -2,70 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== GLOBAL STYLES ===== */
+/* =======================================================
+   GLOBAL BASE
+======================================================= */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background:
-    radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.35), transparent 40%),
-    radial-gradient(circle at 85% 80%, rgba(37, 99, 235, 0.35), transparent 40%),
-    radial-gradient(circle at 60% 40%, rgba(6, 182, 212, 0.15), transparent 50%),
-    #050510;
+  background: #050510; /* Dark base for 3D background */
   color: #f1f0ff;
   font-family: 'DM Sans', sans-serif;
-  position: relative;
   overflow-x: hidden;
 }
 
-/* ===== FUTURISTIC GLOW EFFECTS ===== */
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(124, 58, 237, 0.08),
-    transparent 70%
-  );
-  pointer-events: none;
-  z-index: -1;
+/* Make all sections transparent so 3D shows behind */
+section {
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  background: rgba(124, 58, 237, 0.25);
-  filter: blur(120px);
-  top: -150px;
-  left: -150px;
-  animation: floatGlow 12s ease-in-out infinite alternate;
-  z-index: -1;
-}
-
-@keyframes floatGlow {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(80px, 60px);
-  }
-}
-
-/* ================= HERO SECTION ================= */
+/* =======================================================
+   HERO SECTION
+======================================================= */
 
 #hero {
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 8vw;
-  padding-top: 80px;
   position: relative;
 }
 
@@ -97,18 +65,18 @@ body::after {
 }
 
 @keyframes pulse {
-  0%,100% { opacity: 1; transform: scale(1); }
+  0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.4; transform: scale(0.6); }
 }
 
 /* ---------- TITLE ---------- */
 
 .hero-title {
-  font-size: clamp(3rem, 8vw, 7rem);
-  font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
+  font-size: clamp(3.5rem, 10vw, 10rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 2rem;
 }
 
 .line {
@@ -118,7 +86,7 @@ body::after {
 
 .line span {
   display: block;
-  animation: lineReveal 0.9s cubic-bezier(0.16,1,0.3,1) both;
+  animation: lineReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .line:nth-child(1) span { animation-delay: 0.3s; }
@@ -169,16 +137,16 @@ body::after {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(124,58,237,0.5);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
 }
 
 .btn-ghost {
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
   padding: 0.85rem 2rem;
   border-radius: 12px;
   text-decoration: none;
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   transition: 0.3s;
 }
 
@@ -213,11 +181,13 @@ body::after {
 }
 
 @keyframes scrollPulse {
-  0%,100% { opacity: 0.3; }
+  0%, 100% { opacity: 0.3; }
   50% { opacity: 1; }
 }
 
-/* ---------- GLOBAL FADE ---------- */
+/* =======================================================
+   GLOBAL ANIMATIONS
+======================================================= */
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -229,16 +199,96 @@ body::after {
   to { opacity: 1; }
 }
 
+/* =======================================================
+   MARQUEE (Skills)
+======================================================= */
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
   animation: marquee 25s linear infinite;
+}
+
+/* =======================================================
+   CUSTOM CURSOR
+======================================================= */
+
+body {
+  cursor: none;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #a78bfa;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(167, 139, 250, 0.6);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+
+.cursor-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(124, 58, 237, 0.15);
+  filter: blur(15px);
+}
+
+/* Hover effect */
+.cursor-hover {
+  width: 70px !important;
+  height: 70px !important;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid #a78bfa;
+}
+
+/* ---------- SOCIAL BUTTONS ---------- */
+
+.hero-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  animation: fadeUp 0.8s 1s ease both;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a78bfa;
+  transition: 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-4px);
+  border-color: #a78bfa;
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.5);
+  color: white;
 }

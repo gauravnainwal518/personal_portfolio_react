@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -34,6 +35,27 @@ const Hero = () => {
 
         <a href="#contact" className="btn-ghost">
           Let's Talk
+        </a>
+      </div>
+
+      {/* 🔥 Social Buttons */}
+      <div className="hero-socials">
+        <a
+          href="https://github.com/gauravnainwal518"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-btn"
+        >
+          <FaGithub size={20} />
+        </a>
+
+        <a
+          href="https://linkedin.com/in/gauravcn"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-btn"
+        >
+          <FaLinkedin size={20} />
         </a>
       </div>
 
