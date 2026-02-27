@@ -14,7 +14,7 @@ const ContactSection = () => {
         "service_ejtdbom",
         "template_atkg0pj",
         formRef.current,
-        "gw4R0DhFrwwyAwkMg"
+        "gw4R0DhFrwwyAwkMg",
       )
       .then(
         () => {
@@ -25,109 +25,98 @@ const ContactSection = () => {
         () => {
           setSuccess(false);
           setError(true);
-        }
+        },
       );
   };
 
   return (
-    <section id="contact" className="bg-gray-900 py-20 px-6 text-white">
+    <section id="contact" className="py-16 px-8 md:px-20">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-bold text-center text-blue-400 decoration-blue-500 mb-12">
-          GET IN TOUCH
+        {/* Small Label */}
+        <p className="text-sm tracking-[0.35em] uppercase text-purple-400 text-center mb-4">
+          Contact
+        </p>
+
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+          Let’s Work Together
         </h2>
 
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* Contact Info */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex-1 space-y-6">
-            <h3 className="text-2xl font-semibold mb-4 text-white">
-              Let's Connect
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Contact Info Card */}
+          <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 hover:shadow-[0_0_30px_rgba(124,58,237,0.25)] transition duration-500">
+            <h3 className="text-lg font-semibold text-white mb-6">
+              Contact Info
             </h3>
-            <div className="flex items-center space-x-4">
-              <FaEnvelope className="text-blue-400" size={20} />
-              <span className="text-lg break-words">
-                gauravnainwal394@gmail.com
-              </span>
-            </div>
-            <div className="flex items-center space-x-4">
-              <FaPhone className="text-green-400" size={20} />
-              <span className="text-lg">+91 9084481518</span>
-            </div>
-            <div className="flex items-center space-x-4">
-              <FaMapMarkerAlt className="text-red-400" size={20} />
-              <span className="text-lg">Uttarakhand, India</span>
+
+            <div className="space-y-4 text-gray-300 text-sm">
+              <div className="flex items-center gap-3">
+                <FaEnvelope className="text-purple-400" size={16} />
+                <span className="break-words">gauravnainwal394@gmail.com</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <FaPhone className="text-cyan-400" size={16} />
+                <span>+91 9084481518</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <FaMapMarkerAlt className="text-pink-400" size={16} />
+                <span>Uttarakhand, India</span>
+              </div>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex-1">
-            <h3 className="text-2xl font-semibold text-white mb-4">
-              Send Me a Message
+          {/* Contact Form Card */}
+          <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 hover:shadow-[0_0_30px_rgba(6,182,212,0.25)] transition duration-500">
+            <h3 className="text-lg font-semibold text-white mb-6">
+              Send Message
             </h3>
-            <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
-              <div>
-                <label
-                  className="block text-lg font-medium mb-1"
-                  htmlFor="name"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="from_name"
-                  required
-                  placeholder="Your Name"
-                  className="w-full p-2 rounded-md bg-gray-900 text-gray-200 border border-gray-700 focus:border-blue-500 focus:outline-none"
-                />
-              </div>
 
-              <div>
-                <label
-                  className="block text-lg font-medium mb-1"
-                  htmlFor="email"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="from_email"
-                  required
-                  placeholder="Your Email"
-                  className="w-full p-2 rounded-md bg-gray-900 text-gray-200 border border-gray-700 focus:border-blue-500 focus:outline-none"
-                />
-              </div>
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="space-y-4 text-sm"
+            >
+              <input
+                type="text"
+                name="from_name"
+                required
+                placeholder="Your Name"
+                className="w-full px-4 py-2 rounded-lg bg-black/40 text-gray-200 border border-white/10 focus:border-purple-500 focus:outline-none"
+              />
 
-              <div>
-                <label
-                  className="block text-lg font-medium mb-1"
-                  htmlFor="message"
-                >
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  required
-                  rows="5"
-                  placeholder="Your Message"
-                  className="w-full p-2 rounded-md bg-gray-900 text-gray-200 border border-gray-700 focus:border-blue-500 focus:outline-none"
-                />
-              </div>
+              <input
+                type="email"
+                name="from_email"
+                required
+                placeholder="Your Email"
+                className="w-full px-4 py-2 rounded-lg bg-black/40 text-gray-200 border border-white/10 focus:border-purple-500 focus:outline-none"
+              />
 
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md w-40 transition duration-300"
-                >
-                  Send
-                </button>
-              </div>
+              <textarea
+                name="message"
+                required
+                rows="4"
+                placeholder="Your Message"
+                className="w-full px-4 py-2 rounded-lg bg-black/40 text-gray-200 border border-white/10 focus:border-purple-500 focus:outline-none"
+              />
+
+              <button
+                type="submit"
+                className="mt-2 px-6 py-2 rounded-xl bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium hover:opacity-90 transition duration-300"
+              >
+                Send Message
+              </button>
 
               {success && (
-                <p className="text-green-400 text-sm pt-2">
+                <p className="text-green-400 text-xs pt-2">
                   Message sent successfully!
                 </p>
               )}
+
               {error && (
-                <p className="text-red-400 text-sm pt-2">
+                <p className="text-red-400 text-xs pt-2">
                   Something went wrong. Please try again.
                 </p>
               )}

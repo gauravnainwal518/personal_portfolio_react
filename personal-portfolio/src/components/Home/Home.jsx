@@ -1,77 +1,48 @@
 import React from "react";
-import { TypeAnimation } from "react-type-animation";
-import { FaRegHandPeace } from "react-icons/fa";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-const Home = () => {
+const Hero = () => {
   return (
-    <section className="min-h-screen bg-gray-900 text-white flex items-center justify-center px-6 pt-32 pb-12">
-      <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-12">
-        {/* LEFT SIDE */}
-        <div className="flex-1 text-center md:text-left space-y-6">
-          <h2 className="text-3xl md:text-4xl font-semibold text-blue-400 flex items-center justify-center md:justify-start gap-2">
-            Hi there <FaRegHandPeace className="inline-block animate-bounce" />!
-          </h2>
+    <section id="hero">
+      <div className="hero-tag">
+        <span className="hero-tag-dot"></span>
+        Available for new projects
+      </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-white">
-            I'm Gaurav Nainwal
-          </h1>
+      <h1 className="hero-title">
+        <span className="line">
+          <span>Hi, I'm Gaurav.</span>
+        </span>
 
-          <TypeAnimation
-            sequence={[
-              "MERN Stack Developer",
-              2000,
-              "React Developer",
-              2000,
-              "Cypress Automation Tester",
-              2000,
-              "Full Stack Developer",
-              2000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            className="text-xl md:text-2xl text-gray-300 block pt-2"
-          />
+        <span className="line">
+          <span className="gradient-text">Full Stack</span>
+        </span>
 
-          <p className="text-base md:text-lg text-gray-400 max-w-md mx-auto md:mx-0">
-            Passionate about building full-stack web applications using the MERN
-            stack and ensuring product quality with end-to-end automation
-            testing using Cypress.
-          </p>
+        <span className="line">
+          <span>Developer.</span>
+        </span>
+      </h1>
 
-          {/* Social Icons - KEEPING on LEFT */}
-          <div className="flex justify-center md:justify-start gap-6 pt-4 text-xl">
-            <a
-              href="https://github.com/gauravnainwal518"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400 transition-colors"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://linkedin.com/in/gauravcn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400 transition-colors"
-            >
-              <FaLinkedin />
-            </a>
-          </div>
-        </div>
+      <p className="hero-desc">
+        I craft fast, beautiful, and scalable web experiences — from
+        pixel-perfect interfaces to robust backend systems.
+      </p>
 
-        {/* RIGHT SIDE - IMAGE ONLY (no icons) */}
-        <div className="flex-1 flex justify-center">
-          <img
-            src="/images/programmer illustration.png"
-            alt="Developer Illustration"
-            className="w-[300px] md:w-[400px] animate-float"
-          />
-        </div>
+      <div className="hero-cta">
+        <a href="#projects" className="btn-primary">
+          View My Work
+        </a>
+
+        <a href="#contact" className="btn-ghost">
+          Let's Talk
+        </a>
+      </div>
+
+      <div className="hero-scroll">
+        <div className="scroll-line"></div>
+        Scroll
       </div>
     </section>
   );
 };
 
-export default Home;
+export default Hero;

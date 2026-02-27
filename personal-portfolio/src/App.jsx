@@ -7,34 +7,28 @@ import Skills from "./components/Skills/Skills.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 
 import { Element } from "react-scroll";
-
 function App() {
   return (
     <div className="App text-white transition-colors duration-300 relative z-10">
       <Navbar />
 
-      {/* Home Section */}
-      <Element name="home" className="min-h-screen">
+      <Element name="home">
         <Home />
       </Element>
 
-      {/* About Section */}
-      <Element name="about" className="min-h-screen">
+      <Element name="about">
         <About />
       </Element>
 
-      {/* Projects Section */}
-      <Element name="projects" className="min-h-screen">
+      <Element name="projects">
         <Projects />
       </Element>
 
-      {/* Skills Section */}
-      <Element name="skills" className="min-h-screen">
+      <Element name="skills">
         <Skills />
       </Element>
 
-      {/* Contact Section */}
-      <Element name="contact" className="min-h-screen">
+      <Element name="contact">
         <Contact />
       </Element>
     </div>

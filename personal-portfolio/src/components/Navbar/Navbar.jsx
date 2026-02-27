@@ -10,15 +10,17 @@ const Navbar = () => {
   const handleClose = () => setIsOpen(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-gradient-to-r from-gray-900 to-gray-700 text-white z-50 shadow-md">
+    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4 md:px-12">
-        {/* Logo */}
-        <div className="text-3xl md:text-4xl font-extrabold text-blue-500 cursor-pointer relative group">
-          GN.
-          <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+        {/* ===== Logo ===== */}
+        <div className="text-3xl md:text-4xl font-extrabold cursor-pointer relative group">
+          <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            GN.
+          </span>
+          <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-gradient-to-r from-purple-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
         </div>
 
-        {/* Desktop Nav */}
+        {/* ===== Desktop Navigation ===== */}
         <div className="hidden md:flex space-x-10 items-center">
           {navItems.map((item) => (
             <Link
@@ -28,36 +30,37 @@ const Navbar = () => {
               duration={500}
               offset={-80}
               spy={true}
-              className="relative text-lg text-gray-300 hover:text-white font-semibold transition-colors duration-300 group cursor-pointer"
+              activeClass="text-white"
+              className="relative text-lg text-gray-300 hover:text-white font-medium transition-all duration-300 group cursor-pointer"
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
 
-          {/* Resume Link */}
+          {/* ===== Resume Button ===== */}
           <a
-            href="/Resume_Gaurav Chandra nainwal.pdf"
+            href="/Gaurav_Nainwal_MERN_Stack_Developer.pdf"
             download
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:shadow-[0_0_25px_rgba(124,58,237,0.6)] text-white px-5 py-2 rounded-lg text-sm font-medium transition duration-300"
           >
             Download CV
           </a>
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="md:hidden">
+        {/* ===== Mobile Toggle ===== */}
+        <div className="md:hidden text-white">
           <button onClick={handleToggle} aria-label="Toggle Menu">
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* ===== Mobile Menu ===== */}
       <div
-        className={`md:hidden bg-gray-800 overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`md:hidden backdrop-blur-xl bg-white/5 border-t border-white/10 overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? "max-h-96" : "max-h-0"
         }`}
       >
@@ -69,21 +72,22 @@ const Navbar = () => {
               smooth={true}
               duration={500}
               offset={-80}
-              onClick={handleClose} // <-- Add this line
-              className="py-3 text-lg text-gray-300 hover:text-white border-b border-gray-700 cursor-pointer"
+              spy={true}
+              onClick={handleClose}
+              className="py-3 text-lg text-gray-300 hover:text-white border-b border-white/10 cursor-pointer transition duration-300"
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}
             </Link>
           ))}
 
-          {/* Resume Button in Mobile */}
+          {/* Mobile Resume Button */}
           <a
             href="/Gaurav_Nainwal_MERN_Stack_Developer.pdf"
             download
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleClose}
-            className="mt-3 bg-blue-500 hover:bg-blue-600 text-white text-center py-2 rounded-md text-sm font-medium transition duration-300"
+            className="mt-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:shadow-[0_0_20px_rgba(124,58,237,0.6)] text-white text-center py-2 rounded-lg text-sm font-medium transition duration-300"
           >
             Download CV
           </a>

@@ -37,17 +37,14 @@ const Skills = () => {
       name: "Node.js",
       icon: <SiNodedotjs className="text-green-500" size={28} />,
     },
-    {
-      name: "Express.js",
-      icon: <SiExpress className="text-white" size={28} />,
-    },
+    { name: "Express", icon: <SiExpress className="text-white" size={28} /> },
     {
       name: "MongoDB",
       icon: <SiMongodb className="text-green-600" size={28} />,
     },
     { name: "MySQL", icon: <SiMysql className="text-blue-600" size={28} /> },
     {
-      name: "Tailwind CSS",
+      name: "Tailwind",
       icon: <SiTailwindcss className="text-sky-400" size={28} />,
     },
     { name: "GitHub", icon: <SiGithub className="text-white" size={28} /> },
@@ -55,8 +52,6 @@ const Skills = () => {
       name: "Postman",
       icon: <SiPostman className="text-orange-400" size={28} />,
     },
-
-    // Testing Skills
     {
       name: "Cypress",
       icon: <SiCypress className="text-green-400" size={28} />,
@@ -65,35 +60,35 @@ const Skills = () => {
       name: "Cucumber",
       icon: <SiCucumber className="text-green-600" size={28} />,
     },
-    {
-      name: "Mocha",
-      icon: <SiMocha className="text-yellow-600" size={28} />,
-    },
-    {
-      name: "Jenkins",
-      icon: <SiJenkins className="text-red-500" size={28} />,
-    },
+    { name: "Mocha", icon: <SiMocha className="text-yellow-600" size={28} /> },
+    { name: "Jenkins", icon: <SiJenkins className="text-red-500" size={28} /> },
   ];
 
   return (
-    <section id="skills" className="bg-gray-900 py-16 pt-0 text-white">
-      <div className="container mx-auto px-4 md:px-8 lg:px-16">
-        {/* Heading */}
-        <h2 className="text-5xl font-bold text-center text-blue-400 mb-12">
-          SKILLS
-        </h2>
+    <section id="skills" className="py-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8 md:px-20">
+        {/* Small Label */}
+        <p className="text-sm tracking-[0.35em] uppercase text-purple-400 text-center mb-4">
+          Skills
+        </p>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="bg-gray-800 p-5 rounded-lg shadow-md hover:shadow-cyan-500/30 hover:scale-105 transition-transform duration-300 flex flex-col items-center justify-center space-y-3 text-center"
-            >
-              {skill.icon}
-              <span className="text-gray-300 font-medium">{skill.name}</span>
-            </div>
-          ))}
+        {/* Main Heading */}
+        <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-12">
+          Tech Stack I Use
+        </h2>
+        {/* Marquee Wrapper */}
+        <div className="relative w-full overflow-hidden mt-12">
+          <div className="flex gap-8 animate-marquee whitespace-nowrap">
+            {[...skills, ...skills].map((skill, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-4 rounded-2xl min-w-max hover:shadow-purple-500/20 hover:scale-105 transition duration-300"
+              >
+                {skill.icon}
+                <span className="text-gray-300 font-medium">{skill.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
